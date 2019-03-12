@@ -22,7 +22,7 @@ pip install tensorflow
 jupyter notebook
 ```
 
-# Test
+# Test for gpu tensorflow
 
 ```python
 import tensorflow as tf

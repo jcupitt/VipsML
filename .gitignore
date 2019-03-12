@@ -1,1 +1,3 @@
 VipsML
+*.swp
+.ipynb_checkpoints
