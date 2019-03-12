@@ -1,35 +1,26 @@
 # Install
 
+Version requirements:
+
+* `tensorflow-gpu==0.12` needs `libcudart.so.8.0`
+* `tensorflow-gpu==1.1` needs `libcublas.so.8.0`
+* `tensorflow-gpu==1.12` needs `libcublas.so.9.0`
+* `tensorflow-gpu==1.13` needs `libcublas.so.10.0`.
+
+Ubuntu 18.10 has 9.1, so you need to build your own `tensorflow-gpu` from
+source.
+
+Imperial Ubuntu has `libcuda.so.384.130`, but nothing else. Again, build your
+own `tensorflow-gpu`.
+
 ```
-virtualenv VipsML
+virtualenv -p $(which python3) VipsML
 source VipsML/bin/activate
 pip install jupyter
-jupyter notebook
 pip install Keras pyvips 
+pip install tensorflow
+jupyter notebook
 ```
-
-We need a display driver, CUDA driver, cuda toolkit, and tendorflow-gpu 
-package that all agree on version numbers. 
-
-Ubuntu 18.10 ships with CUDA 9.1.
-
-CUDA 10.0 is the version supported by tensorflow-gpu. The current version on
-the nvidia site is CUDA 10.1 ... it is broken and no one uses it.
-
-Go to:
-
-https://developer.nvidia.com/cuda-zone
-
-And download the runfile (local) installer of 10.0 from the archive for 18.04. 
-
-```
-sudo sh cuda_10.0.130_410.48_linux.run
-```
-
-You need to install everything. This won't work from the desktop, you have to
-reboot, flip to a console session, and run there.
-
-
 
 # Test
 
